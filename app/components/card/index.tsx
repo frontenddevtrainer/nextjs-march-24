@@ -9,7 +9,6 @@ interface ICardProps {
 
 const Card = (props: ICardProps) => {
   const { heading, content } = props;
-
   const [counter, setCounter] = useState(0);
 
   return (
