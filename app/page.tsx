@@ -1,5 +1,6 @@
 import Heading from "@/app/components/heading";
 import Card from "./components/card";
+import LoginForm from "./components/login-form";
 
 export default function Home() {
   const cards = [
@@ -22,6 +23,7 @@ export default function Home() {
   return (
     <>
       <Heading />
+      <LoginForm />
       {cards?.length > 0 &&
         cards.map((card, index) => {
           const { heading, id, content } = card;
