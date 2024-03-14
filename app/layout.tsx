@@ -19,9 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
+        <Header title="Music Store" />
         {children}
-        <Footer/>
+        <Footer />
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
       </body>
     </html>
   );
