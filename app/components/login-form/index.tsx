@@ -1,14 +1,19 @@
 "use client";
 
-import { FormEventHandler, useState } from "react";
+import { useState } from "react";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const loginUser = (e: any) => {
+  const loginUser = async (e: any) => {
     e.preventDefault();
-    /// fetch
+    const response = await fetch("/api/login", {
+      method: "POST",
+      body: JSON.stringify({ email, password }),
+    });
+    const data = response.json();
+    console.log(data);
   };
 
   return (
