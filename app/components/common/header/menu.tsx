@@ -1,4 +1,21 @@
+"use client";
+
+import { useEffect } from "react";
+
+// Mounting - Render
+// Updating - Render
+// Unmount
+
 const HeaderMenu = () => {
+  // component did mount
+  useEffect(() => {
+    console.log("Did mount");
+
+    return () => {
+      console.log("un mount");
+    };
+  }, []);
+
   return (
     <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
       <div
@@ -33,4 +50,4 @@ const HeaderMenu = () => {
   );
 };
 
-export default HeaderMenu
+export default HeaderMenu;

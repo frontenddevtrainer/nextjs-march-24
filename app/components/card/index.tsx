@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface ICardProps {
   heading: string;
@@ -10,6 +10,10 @@ interface ICardProps {
 const Card = (props: ICardProps) => {
   const { heading, content } = props;
   const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    console.log("counter updated " + counter);
+  }, [counter, content]);
 
   return (
     <div className="p-10 rounded-lg drop-shadow-sm bg-white">
