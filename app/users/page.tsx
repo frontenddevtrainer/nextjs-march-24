@@ -2,7 +2,7 @@ import { IUser } from "../interfaces/user";
 
 // RSC
 const UsersPage = async () => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const response = await fetch("http://localhost:3000/api/users", { next : { tags : ["users"] } });
   const data = await response.json() as unknown as IUser[];
 
   return (
