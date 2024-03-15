@@ -1,8 +1,12 @@
 import { IUser } from "../interfaces/user";
 
+const apiBaseURL = process.env.NEXT_PUBLIC_API_BASE_URL
+
+console.log(apiBaseURL);
+
 // RSC
 const UsersPage = async () => {
-  const response = await fetch("http://localhost:3000/api/users", { next : { tags : ["users"] } });
+  const response = await fetch(`${apiBaseURL}/api/users`, { next : { tags : ["users"] } });
   const data = await response.json() as unknown as IUser[];
 
   return (
